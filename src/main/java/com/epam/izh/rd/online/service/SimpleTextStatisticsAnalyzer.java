@@ -57,9 +57,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public List<String> getWords(String text) {
-
         return Arrays.asList(text.split("[\\p{Punct}\\s]+"));
-
     }
 
     /**
@@ -72,7 +70,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public Set<String> getUniqueWords(String text) {
-        return emptySet();
+        return new HashSet<String>(Arrays.asList(text.split("[\\p{Punct}\\s]+")));
     }
 
     /**
