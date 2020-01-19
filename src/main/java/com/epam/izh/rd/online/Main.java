@@ -20,12 +20,12 @@ public class Main {
 
             System.out.println("Testing getWords() method:\n");
             System.out.println("Text for test: \"" + textToBeAnalyzed + "\"");
-            System.out.println("getWords() returns: \"" + textAnalyzer.getWords(textToBeAnalyzed) + "\"");
+            System.out.println("getWords() returns: " + textAnalyzer.getWords(textToBeAnalyzed));
 
             textToBeAnalyzed = "OK, easy. Now just drop the gun. I said drop the gun, ***!!!";
             System.out.println("\nNow testing getUniqueWords() method:\n");
             System.out.println("Text for test: \"" + textToBeAnalyzed + "\"");
-            System.out.println("getUniqueWords() returns: \"" + textAnalyzer.getUniqueWords(textToBeAnalyzed) + "\"");
+            System.out.println("getUniqueWords() returns: " + textAnalyzer.getUniqueWords(textToBeAnalyzed));
 
 
             System.out.println("\n***** END OF DEBUGGING SimpleTextStatisticsAnalyzer METHODS *****\n");
