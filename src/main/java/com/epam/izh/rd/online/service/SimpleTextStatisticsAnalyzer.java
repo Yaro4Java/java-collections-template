@@ -16,7 +16,7 @@ import static java.util.Collections.*;
 public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
 
     /**
-     * Необходимо реализовать функционал подсчета суммарной длины всех слов (пробелы, знаким препинания итд не считаются).
+     * Необходимо реализовать функционал подсчета суммарной длины всех слов (пробелы, знаки препинания итд не считаются).
      * Например для текста "One, I - tWo!!" - данный метод должен вернуть 7.
      *
      * @param text текст
@@ -57,7 +57,9 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public List<String> getWords(String text) {
-        return emptyList();
+
+        return Arrays.asList(text.split("[\\p{Punct}\\s]+"));
+
     }
 
     /**
