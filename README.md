@@ -12,5 +12,5 @@
 и так далее
 
 В процессе выполнения нужно использовать классы из `Java Collections Api`. В сервисе `SimpleTextStatisticsAnalyzer` методы
-должны быть имплементированы с использованием циклов, а в сервисе `StreapApiTextStatisticsAnalyzer` с использованием 
+должны быть имплементированы с использованием циклов, а в сервисе `StreamApiTextStatisticsAnalyzer` с использованием 
 `Stream API`
