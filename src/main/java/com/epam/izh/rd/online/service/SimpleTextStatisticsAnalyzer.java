@@ -23,7 +23,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public int countSumLengthOfWords(String text) {
-        return 0;
+        return text.replaceAll("[\\p{Punct}\\s]+", "").length();
     }
 
     /**
@@ -34,7 +34,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public int countNumberOfWords(String text) {
-        return 0;
+        return this.getWords(text).size();
     }
 
     /**
@@ -44,7 +44,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public int countNumberOfUniqueWords(String text) {
-        return 0;
+        return this.getUniqueWords(text).size();
     }
 
     /**
@@ -70,7 +70,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public Set<String> getUniqueWords(String text) {
-        return new HashSet<String>(Arrays.asList(text.split("[\\p{Punct}\\s]+")));
+        return new HashSet<>(Arrays.asList(text.split("[\\p{Punct}\\s]+")));
     }
 
     /**
@@ -82,7 +82,19 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public Map<String, Integer> countNumberOfWordsRepetitions(String text) {
-        return emptyMap();
+
+        List<String> listOfWordsFromTheText = this.getWords(text);
+        Set<String> setOfUniqueWordsFromTheText = this.getUniqueWords(text);
+        Map<String, Integer> mapOfWordsWithFrequency = new HashMap<>();
+
+        for (Iterator<String> iterator = setOfUniqueWordsFromTheText.iterator(); iterator.hasNext();) {
+
+            String uniqueWordFromTheText = iterator.next();
+            mapOfWordsWithFrequency.put(uniqueWordFromTheText,
+                                        Collections.frequency(listOfWordsFromTheText, uniqueWordFromTheText));
+        }
+
+        return mapOfWordsWithFrequency;
     }
 
     /**
