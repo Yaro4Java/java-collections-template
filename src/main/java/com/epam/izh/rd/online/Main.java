@@ -5,6 +5,9 @@ import com.epam.izh.rd.online.service.SimpleTextStatisticsAnalyzer;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import static com.epam.izh.rd.online.helper.Direction.ASC;
+import static com.epam.izh.rd.online.helper.Direction.DESC;
+
 public class Main {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
@@ -44,6 +47,15 @@ public class Main {
             System.out.println("Text for test: \"" + textToBeAnalyzed + "\"");
             System.out.println("Number of words repetitions in the text = " +
                     textAnalyzer.countNumberOfWordsRepetitions(textToBeAnalyzed));
+
+
+            textToBeAnalyzed = "I am unsorted. Try to sort me if you can. Ready, steady, go!!!";
+            System.out.println("\n6.Testing sortWordsByLength() method:");
+            System.out.println("Text for test: \"" + textToBeAnalyzed + "\"");
+            System.out.println("Sorting from short to long = " +
+                    textAnalyzer.sortWordsByLength(textToBeAnalyzed, ASC));
+            System.out.println("Sorting from long to short = " +
+                    textAnalyzer.sortWordsByLength(textToBeAnalyzed, DESC));
 
 
             System.out.println("\n***** END OF DEBUGGING SimpleTextStatisticsAnalyzer METHODS *****\n");

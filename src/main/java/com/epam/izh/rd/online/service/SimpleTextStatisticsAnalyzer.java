@@ -4,7 +4,8 @@ import com.epam.izh.rd.online.helper.Direction;
 
 import java.util.*;
 
-import static java.util.Collections.*;
+import static com.epam.izh.rd.online.helper.Direction.ASC;
+import static com.epam.izh.rd.online.helper.Direction.DESC;
 
 /**
  * Совет:
@@ -107,6 +108,15 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
      */
     @Override
     public List<String> sortWordsByLength(String text, Direction direction) {
-        return emptyList();
+
+        List<String> listOfWordsFromTheText = this.getWords(text);
+
+        if(direction == ASC) {
+            Collections.sort(listOfWordsFromTheText, Comparator.comparingInt(String::length));
+        } else {
+            Collections.sort(listOfWordsFromTheText, Comparator.comparingInt(String::length).reversed());
+        }
+
+        return listOfWordsFromTheText;
     }
 }
