@@ -113,7 +113,9 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
 
         if(direction == ASC) {
             Collections.sort(listOfWordsFromTheText, Comparator.comparingInt(String::length));
-        } else {
+        }
+
+        if(direction == DESC) {
             Collections.sort(listOfWordsFromTheText, Comparator.comparingInt(String::length).reversed());
         }
 
