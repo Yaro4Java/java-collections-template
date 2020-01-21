@@ -110,14 +110,10 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
     public List<String> sortWordsByLength(String text, Direction direction) {
 
         List<String> listOfWordsFromTheText = this.getWords(text);
+        Comparator<String> comparator = Comparator.comparingInt(String::length);
 
-        if(direction == ASC) {
-            Collections.sort(listOfWordsFromTheText, Comparator.comparingInt(String::length));
-        }
-
-        if(direction == DESC) {
-            Collections.sort(listOfWordsFromTheText, Comparator.comparingInt(String::length).reversed());
-        }
+        if (direction == ASC) { Collections.sort(listOfWordsFromTheText, comparator); }
+        if (direction == DESC) { Collections.sort(listOfWordsFromTheText, comparator.reversed()); }
 
         return listOfWordsFromTheText;
     }
