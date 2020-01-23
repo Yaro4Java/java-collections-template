@@ -88,9 +88,7 @@ public class SimpleTextStatisticsAnalyzer implements TextStatisticsAnalyzer {
         Set<String> setOfUniqueWordsFromTheText = this.getUniqueWords(text);
         Map<String, Integer> mapOfWordsWithFrequency = new HashMap<>();
 
-        for (Iterator<String> iterator = setOfUniqueWordsFromTheText.iterator(); iterator.hasNext();) {
-
-            String uniqueWordFromTheText = iterator.next();
+        for (String uniqueWordFromTheText : setOfUniqueWordsFromTheText) {
             mapOfWordsWithFrequency.put(uniqueWordFromTheText,
                                         Collections.frequency(listOfWordsFromTheText, uniqueWordFromTheText));
         }

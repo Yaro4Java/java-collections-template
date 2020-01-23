@@ -4,6 +4,7 @@ import com.epam.izh.rd.online.service.SimpleTextStatisticsAnalyzer;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Set;
 
 import static com.epam.izh.rd.online.helper.Direction.ASC;
 import static com.epam.izh.rd.online.helper.Direction.DESC;
@@ -61,5 +62,15 @@ public class Main {
             System.out.println("\n***** END OF DEBUGGING SimpleTextStatisticsAnalyzer METHODS *****\n");
 
         }/***** END OF DEBUGGING SimpleTextStatisticsAnalyzer METHODS *****/
+
+        {/***** --------- BEGIN ---------- *****/
+
+        Set set;
+
+
+        }/***** --------- END ---------- *****/
+
+
+
     }
 }
